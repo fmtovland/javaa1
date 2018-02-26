@@ -6,9 +6,9 @@ class test
 {
 	public static void main(String[] args)
 	{
-		String mystring1=WildCards.normalise("killed");
-		String mystring2=WildCards.normalise("flowers");
-		String mystring3=WildCards.normalise("glasses");
+		String mystring1=WildCards.normalise("killer");
+		String mystring2=WildCards.normalise("birds");
+		String mystring3=WildCards.normalise("places");
 
 		System.out.println(mystring1+"\n"+mystring2+"\n"+mystring3);
 	}
