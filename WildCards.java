@@ -28,8 +28,8 @@ class WildCards
 	{
 		int i;					//for for loops
 		int len=term.length();			//length of wildcard
-		String[] uniSuffixes={"s","y"};			//1 letter suffixes
-		String[] biSuffixes={"ie","es","ed","er"};	//2 letter suffixes
+		String[] uniSuffixes={"s"};			//1 letter suffixes
+		String[] biSuffixes={"es","ed","er"};	//2 letter suffixes
 		String[] triSuffixes={"ing","est"};		//3 letter suffixes
 
 
