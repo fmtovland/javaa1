@@ -12,23 +12,48 @@ class WildCards
 	{
 		int len=wildcard.length();	//length of wildcard
 
-		if(bi(wildcard))
+
+		//check for suffixes from longest to shortest
+		if(checkSuffix(wildcard,3))		//check for 3 letter suffix
+			return wildcard.substring(0,len-3);
+		else if(checkSuffix(wildcard,2))	//check for 2 letter suffix
 			return wildcard.substring(0,len-2);
+		else if(checkSuffix(wildcard,1))	//check for 1 letter suffix
+			return wildcard.substring(0,len-1);
 		else
 			return wildcard;
 	}
 
-	static boolean bi(String term)	//check if term has two letter suffix
+	static boolean checkSuffix(String term, int slen)	//check if term has $slen letter suffix
 	{
-		int i;				//for for loops
-		int len=term.length();		//length of wildcard
-		String[] suffixes={"ed","er"};	//all know 2 letter suffixes
+		int i;					//for for loops
+		int len=term.length();			//length of wildcard
+		String[] uniSuffixes={"s","y"};			//1 letter suffixes
+		String[] biSuffixes={"ie","es","ed","er"};	//2 letter suffixes
+		String[] triSuffixes={"ing","est"};		//3 letter suffixes
 
-		for(i=0; i<suffixes.length; i++)
-		{
-			if(term.substring(len-2,len).equals(suffixes[i]))
-				return true;
-		}
+
+		//select correct suffix list
+		if(slen==1)
+			for(i=0; i<uniSuffixes.length; i++)
+			{
+				if(term.substring(len-slen,len).equals(uniSuffixes[i]))
+					return true;
+			}
+
+		else if(slen==2)
+			for(i=0; i<biSuffixes.length; i++)
+			{
+				if(term.substring(len-slen,len).equals(biSuffixes[i]))
+					return true;
+			}
+
+		else if(slen==3)
+			for(i=0; i<triSuffixes.length; i++)
+			{
+				if(term.substring(len-slen,len).equals(triSuffixes[i]))
+					return true;
+			}
 
 		return false;
 

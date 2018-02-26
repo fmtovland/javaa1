@@ -6,7 +6,10 @@ class test
 {
 	public static void main(String[] args)
 	{
-		String mystring=WildCards.normalise("killed");
-		System.out.println(mystring);
+		String mystring1=WildCards.normalise("killed");
+		String mystring2=WildCards.normalise("flowers");
+		String mystring3=WildCards.normalise("glasses");
+
+		System.out.println(mystring1+"\n"+mystring2+"\n"+mystring3);
 	}
 }
