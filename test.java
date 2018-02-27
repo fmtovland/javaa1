@@ -6,10 +6,12 @@ class test
 {
 	public static void main(String[] args)
 	{
-		String mystring1=WildCards.normalise("killer");
-		String mystring2=WildCards.normalise("birds");
-		String mystring3=WildCards.normalise("places");
+		int i;
+		String[] mystring1=WildCards.getWildCards("killer");
+		String[] mystring2=WildCards.getWildCards("birds");
+		String[] mystring3=WildCards.getWildCards("places");
 
-		System.out.println(mystring1+"\n"+mystring2+"\n"+mystring3);
+		for(i=0; i<6; i++)
+			System.out.println(mystring1[i]+"\n"+mystring2[i]+"\n"+mystring3[i]);
 	}
 }

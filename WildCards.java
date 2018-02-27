@@ -3,11 +3,16 @@ Description: Take in a string and try to remove suffix
 Author: Liam McCormick
 Java version:1.8.0_162_b12
 */
-
 package com.assignment1.search;
 
 class WildCards
 {
+	static String[] uniSuffixes={"s"};			//1 letter suffixes
+	static String[] biSuffixes={"es","ed","er"};		//2 letter suffixes
+	static String[] triSuffixes={"ing","est"};		//3 letter suffixes
+	//total number of suffixes
+	static int sufno=uniSuffixes.length+biSuffixes.length+triSuffixes.length;
+
 	static String normalise(String wildcard)
 	{
 		int len=wildcard.length();	//length of wildcard
@@ -28,10 +33,6 @@ class WildCards
 	{
 		int i;					//for for loops
 		int len=term.length();			//length of wildcard
-		String[] uniSuffixes={"s"};			//1 letter suffixes
-		String[] biSuffixes={"es","ed","er"};	//2 letter suffixes
-		String[] triSuffixes={"ing","est"};		//3 letter suffixes
-
 
 		//select correct suffix list
 		if(slen==1)
@@ -57,5 +58,34 @@ class WildCards
 
 		return false;
 
+	}
+
+	static String[] getWildCards(String input)	//get a list of wildcards for a word
+	{
+		String[] returnable=new String[sufno];
+		int i=0;	//for for loops
+		int j=0;	//bookmark in output
+
+		input=normalise(input);	//remove existing suffix
+
+		for(i=0; i<uniSuffixes.length; i++)
+		{
+			returnable[j]=input+uniSuffixes[i];
+			j++;
+		}
+
+		for(i=0; i<biSuffixes.length; i++)
+		{
+			returnable[j]=input+biSuffixes[i];
+			j++;
+		}
+
+		for(i=0; i<triSuffixes.length; i++)
+		{
+			returnable[j]=input+triSuffixes[i];
+			j++;
+		}
+
+		return returnable;		
 	}
 }
