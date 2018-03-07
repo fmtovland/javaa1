@@ -14,6 +14,7 @@ class FileString
 {
 	private String filename;
 	private String[] contents;
+	private int priority=0;		//the higher this number grows, the higher the file will appear in search results
 
 	//constructer
 	FileString(String filename) throws FileNotFoundException
@@ -56,5 +57,15 @@ class FileString
 	public String[] getContents()
 	{
 		return this.contents;
+	}
+
+	public int getPriority()
+	{
+		return this.priority;
+	}
+
+	public void incresePriority(int amount)	//allow Priority to be incresed but not reduced
+	{
+		this.priority=this.priority+amount;
 	}
 }
