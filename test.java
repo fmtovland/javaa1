@@ -2,16 +2,16 @@
 
 package com.assignment1.search;
 
+import java.io.FileNotFoundException;
+
+
 class test
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 	{
 		int i;
-		String[] mystring1=WildCards.getWildCards("killer");
-		String[] mystring2=WildCards.getWildCards("birds");
-		String[] mystring3=WildCards.getWildCards("places");
-
-		for(i=0; i<6; i++)
-			System.out.println(mystring1[i]+"\n"+mystring2[i]+"\n"+mystring3[i]);
+		FileString hello=new FileString("test.java");
+		for(i=0; i<100; i++)
+			System.out.println(hello.getContents()[i]);
 	}
 }

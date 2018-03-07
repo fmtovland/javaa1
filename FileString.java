@@ -15,6 +15,7 @@ class FileString
 	private String filename;
 	private String[] contents;
 
+	//constructer
 	FileString(String filename) throws FileNotFoundException
 	{
 		try
@@ -34,5 +35,26 @@ class FileString
 		{
 			System.out.println(e);
 		}
+	}
+
+	//setters and getters
+		public void setFilename(String filename)
+	{
+		this.filename=filename;
+	}
+
+	public String getFilename()
+	{
+		return this.filename;
+	}
+
+	public void setContents(String[] contents)
+	{
+		this.contents=contents;
+	}
+
+	public String[] getContents()
+	{
+		return this.contents;
 	}
 }
