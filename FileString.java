@@ -59,6 +59,11 @@ class FileString
 		return this.contents;
 	}
 
+	public int getSizeofContents()
+	{
+		return this.contents.length;
+	}
+
 	public int getPriority()
 	{
 		return this.priority;

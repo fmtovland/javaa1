@@ -11,7 +11,7 @@ class test
 	{
 		int i;
 		FileString hello=new FileString("test.java");
-		for(i=0; i<100; i++)
+		for(i=0; i<hello.getSizeofContents(); i++)
 			System.out.println(hello.getContents()[i]);
 	}
 }
