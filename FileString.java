@@ -25,7 +25,7 @@ class FileString
 			File file1=new File(filename);
 			Scanner scan1= new Scanner(file1);
 			while(scan1.hasNextLine())
-				tmp=tmp+scan1.nextLine();
+				tmp=tmp+" "+scan1.nextLine();
 			scan1.close();
 
 			this.filename=filename;
