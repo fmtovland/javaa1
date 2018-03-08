@@ -39,7 +39,7 @@ class FileString
 	}
 
 	//setters and getters
-		public void setFilename(String filename)
+	public void setFilename(String filename)
 	{
 		this.filename=filename;
 	}
