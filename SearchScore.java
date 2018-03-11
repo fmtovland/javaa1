@@ -12,6 +12,12 @@ class SearchScore
 
 	static void getSearchScore(FileString myFileString, String[] SearchTerm)
 	{
+		//make all search terms lowercase
+		for(i=0; i<SearchTerm.length; i++)
+		{
+			SearchTerm[i]=SearchTerm[i].toLowerCase();
+		}
+
 		for(i=0; i<myFileString.getSizeofContents(); i++)
 		{
 			for(j=0; j<SearchTerm.length; j++)
@@ -27,10 +33,13 @@ class SearchScore
 
 	static void recursiveCheck(FileString myFileString, String[] SearchTerm, int k)	//circle through the next few search terms, each consecutive 
 	{
-		if(myFileString.getContents(i+k).equals(SearchTerm[j+k]))
+		if((i+k)<myFileString.getSizeofContents() && (j+k)<SearchTerm.length)	//keep from going out of bounds
 		{
-			myFileString.incresePriority(100+(50*k));
-			recursiveCheck(myFileString,SearchTerm,k+1);
+			if(myFileString.getContents(i+k).equals(SearchTerm[j+k]))
+			{
+				myFileString.incresePriority(100+(50*k));
+				recursiveCheck(myFileString,SearchTerm,k+1);
+			}
 		}
 	}
 }

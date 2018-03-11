@@ -54,9 +54,9 @@ class FileString
 		return this.contents;
 	}
 
-	public String getContents(int num)
+	public String getContents(int num)	//return a word at index, as all lower case to be used with searchscore
 	{
-		return this.contents[num];
+		return this.contents[num].toLowerCase();
 	}
 
 	public int getSizeofContents()
