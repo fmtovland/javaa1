@@ -8,17 +8,29 @@ package com.assignment1.search;
 
 class SearchScore
 {
+	static int i,j;
+
 	static void getSearchScore(FileString myFileString, String[] SearchTerm)
 	{
-		int i,j;
-
 		for(i=0; i<myFileString.getSizeofContents(); i++)
 		{
 			for(j=0; j<SearchTerm.length; j++)
 			{
 				if(myFileString.getContents(i).equals(SearchTerm[j]))
+				{
 					myFileString.incresePriority(100);
+					recursiveCheck(myFileString,SearchTerm,1);
+				}
 			}
+		}
+	}
+
+	static void recursiveCheck(FileString myFileString, String[] SearchTerm, int k)	//circle through the next few search terms, each consecutive 
+	{
+		if(myFileString.getContents(i+k).equals(SearchTerm[j+k]))
+		{
+			myFileString.incresePriority(100+(50*k));
+			recursiveCheck(myFileString,SearchTerm,k+1);
 		}
 	}
 }
