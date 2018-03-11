@@ -86,6 +86,6 @@ class WildCards
 			j++;
 		}
 
-		return returnable;		
+		return returnable;
 	}
 }

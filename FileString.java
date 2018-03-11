@@ -49,14 +49,14 @@ class FileString
 		return this.filename;
 	}
 
-	public void setContents(String[] contents)
-	{
-		this.contents=contents;
-	}
-
 	public String[] getContents()
 	{
 		return this.contents;
+	}
+
+	public String getContents(int num)
+	{
+		return this.contents[num];
 	}
 
 	public int getSizeofContents()

@@ -9,8 +9,9 @@ class test
 {
 	public static void main(String[] args) throws FileNotFoundException
 	{
+		String[] searchme={"why","art","thou","romeo"};
 		int i;
-		FileString hello=new FileString("test.java");
+		FileString hello=new FileString("testdocs/romeo+juliet.txt");
 		for(i=0; i<hello.getSizeofContents(); i++)
 			System.out.println(hello.getContents()[i]);
 	}
