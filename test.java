@@ -12,7 +12,7 @@ class test
 		String[] searchme={"why","art","thou","romeo"};
 		int i;
 		FileString hello=new FileString("testdocs/romeo+juliet.txt");
-		for(i=0; i<hello.getSizeofContents(); i++)
-			System.out.println(hello.getContents()[i]);
+		SearchScore.getSearchScore(hello,searchme);
+		System.out.println(hello.getPriority());
 	}
 }
