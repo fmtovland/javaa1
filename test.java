@@ -11,7 +11,7 @@ class test
 	{
 		String[] searchme={"why","art","thou","romeo"};
 		int i;
-		FileString[] hello={new FileString("testdocs/kingLear.txt"),new FileString("testdocs/romeo+juliet.txt"),new FileString("testdocs/MerchantOfVenice.txt")};
+		FileString[] hello={new FileString("library/kingLear.txt"),new FileString("library/romeo+juliet.txt"),new FileString("library/MerchantOfVenice.txt")};
 		for(i=0; i<hello.length; i++)
 		{
 			SearchScore.getSearchScore(hello[i],searchme);
