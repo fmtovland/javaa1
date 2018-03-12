@@ -22,11 +22,8 @@ class SearchScore
 		{
 			for(j=0; j<SearchTerm.length; j++)
 			{
-				if(myFileString.getContents(i).equals(SearchTerm[j]))
-				{
-					myFileString.incresePriority(100);
-					recursiveCheck(myFileString,SearchTerm,1);
-				}
+				recursiveCheck(myFileString,SearchTerm,0);
+
 			}
 		}
 	}
