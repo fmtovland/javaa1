@@ -3,6 +3,7 @@
 package com.assignment1.search;
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 
 
 class test
@@ -11,8 +12,16 @@ class test
 	{
 		String[] searchme={"why","art","thou","romeo"};
 		int i;
-		FileString hello=new FileString("testdocs/romeo+juliet.txt");
-		SearchScore.getSearchScore(hello,searchme);
-		System.out.println(hello.getPriority());
+		FileString[] hello={new FileString("testdocs/romeo+juliet.txt"),new FileString("testdocs/MerchantOfVenice.txt")};
+		for(i=0; i<hello.length; i++)
+		{
+			SearchScore.getSearchScore(hello[i],searchme);
+			System.out.println(hello[i].getPriority());
+		}
+
+		Arrays.sort(hello,hello.getPriority());
+
+		for(i=0; i<hello.length; i++)
+			System.out.println(hello[i].getPriority());
 	}
 }
