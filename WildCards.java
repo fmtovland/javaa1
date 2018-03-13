@@ -7,11 +7,11 @@ package com.assignment1.search;
 
 class WildCards
 {
-	static String[] uniSuffixes={"s"};			//1 letter suffixes
-	static String[] biSuffixes={"es","ed","er"};		//2 letter suffixes
-	static String[] triSuffixes={"ing","est"};		//3 letter suffixes
+	private static String[] uniSuffixes={"s"};			//1 letter suffixes
+	private static String[] biSuffixes={"es","ed","er"};		//2 letter suffixes
+	private static String[] triSuffixes={"ing","est"};		//3 letter suffixes
 	//total number of suffixes
-	static int sufno=uniSuffixes.length+biSuffixes.length+triSuffixes.length;
+	private static int sufno=uniSuffixes.length+biSuffixes.length+triSuffixes.length;
 
 	static String normalise(String wildcard)
 	{

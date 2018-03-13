@@ -8,7 +8,7 @@ package com.assignment1.search;
 
 class SearchScore
 {
-	static int i,j;
+	private static int i,j;
 
 	static void getSearchScore(FileString myFileString, String[] SearchTerm)
 	{
