@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 
 class test
 {
-	public static void main(String[] args) throws FileNotFoundException
+	public static void main(String[] args)
 	{
 		int i;
 		File workingDir=new File("library/");

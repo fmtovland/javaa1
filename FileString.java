@@ -17,7 +17,7 @@ class FileString
 	private int priority=0;		//the higher this number grows, the higher the file will appear in search results
 
 	//constructer
-	FileString(String filename) throws FileNotFoundException
+	FileString(String filename)
 	{
 		try
 		{
