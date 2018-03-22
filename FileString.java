@@ -42,7 +42,7 @@ class FileString implements Comparable<FileString>
 	//implement comparable
 	public int compareTo(FileString that)
 	{
-		return this.priority-that.getPriority();
+		return that.getPriority()-this.getPriority();
 	}
 
 	//setters and getters
