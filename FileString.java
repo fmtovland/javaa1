@@ -6,11 +6,12 @@ Java version:1.8.0_162_b12
 
 package com.assignment1.search;
 
+import java.util.Comparator;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-class FileString
+class FileString implements Comparable<FileString>
 {
 	private String filename;
 	private String[] contents;
@@ -36,6 +37,12 @@ class FileString
 		{
 			System.out.println(e);
 		}
+	}
+
+	//implement comparable
+	public int compareTo(FileString that)
+	{
+		return this.priority-that.getPriority();
 	}
 
 	//setters and getters

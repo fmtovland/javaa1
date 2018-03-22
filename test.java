@@ -28,7 +28,7 @@ class test
 			SearchScore.getSearchScore(hello[i],searchme);
 		}
 
-		SortFileArray.sort(hello);
+		hello.sort();
 
 		for(i=0; i<hello.length; i++)
 			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority());
