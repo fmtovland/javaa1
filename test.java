@@ -6,6 +6,7 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.io.FileNotFoundException;
 
+import java.util.Arrays;
 
 class test
 {
@@ -28,7 +29,7 @@ class test
 			SearchScore.getSearchScore(hello[i],searchme);
 		}
 
-		hello.sort();
+		Arrays.sort(hello);
 
 		for(i=0; i<hello.length; i++)
 			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority());
