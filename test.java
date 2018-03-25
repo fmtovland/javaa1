@@ -12,7 +12,7 @@ class test
 {
 	public static void main(String[] args)
 	{
-		int i;
+		int i,j;
 		File workingDir=new File("library/");
 		File[] fileList=workingDir.listFiles();
 		FileString[] hello=new FileString[fileList.length];
@@ -32,6 +32,10 @@ class test
 		Arrays.sort(hello);
 
 		for(i=0; i<hello.length; i++)
-			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority()+" "+hello[i].getHighpoint());
+		{
+			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority());
+			for(j=0; j<20; j++)
+				System.out.println(hello[i].getContents(hello[i].getHighpoint()+j));
+		}
 	}
 }
