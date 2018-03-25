@@ -34,8 +34,7 @@ class test
 		for(i=0; i<hello.length; i++)
 		{
 			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority());
-			for(j=0; j<20; j++)
-				System.out.println(hello[i].getContents(hello[i].getHighpoint()+j));
+			System.out.println(hello[i].getContents(hello[i].getHighpoint(),hello[i].getHighpoint()+hello[i].getHighscore()));
 		}
 	}
 }

@@ -68,6 +68,17 @@ class FileString implements Comparable<FileString>
 		return this.contents[num].toLowerCase();
 	}
 
+	public String getContents(int start, int end)	//return all words between the indexes of start and end
+	{
+		int i;
+		String returnme="";
+
+		for(i=start; i<end; i++)
+			returnme=returnme+contents[i]+" ";
+
+		return returnme;
+	}
+
 	public int getSizeofContents()
 	{
 		return this.contents.length;
