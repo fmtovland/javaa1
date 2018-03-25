@@ -32,6 +32,6 @@ class test
 		Arrays.sort(hello);
 
 		for(i=0; i<hello.length; i++)
-			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority());
+			System.out.println(hello[i].getFilename()+" "+hello[i].getPriority()+" "+hello[i].getHighpoint());
 	}
 }

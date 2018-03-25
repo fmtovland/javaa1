@@ -16,6 +16,8 @@ class FileString implements Comparable<FileString>
 	private String filename;
 	private String[] contents;
 	private int priority=0;		//the higher this number grows, the higher the file will appear in search results
+	private int highpoint=0;	//the point in the file that best matches the search term
+	private int highscore=0;	//how many words in highpoint match
 
 	//constructer
 	FileString(String filename)
@@ -80,4 +82,25 @@ class FileString implements Comparable<FileString>
 	{
 		this.priority=this.priority+amount;
 	}
+
+	public void setHighpoint(int highpoint)
+	{
+		this.highpoint=highpoint;
+	}
+
+	public int getHighpoint()
+	{
+		return this.highpoint;
+	}
+
+	public void setHighscore(int highscore)
+	{
+		this.highscore=highscore;
+	}
+
+	public int getHighscore()
+	{
+		return this.highscore;
+	}
+
 }

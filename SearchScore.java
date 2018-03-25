@@ -9,6 +9,7 @@ package com.assignment1.search;
 class SearchScore
 {
 	private static int i,j;
+	private static int score;
 
 	static void getSearchScore(FileString myFileString, String[] SearchTerm)
 	{
@@ -23,6 +24,14 @@ class SearchScore
 				for(j=0; j<SearchTerm.length; j++)
 					recursiveCheck(myFileString,SearchTerm,0);
 
+				/* find the point that best matches the search term and records it
+				   if two or more points score the same then the one to occur first
+				   shall be recorded */
+				if(score>myFileString.getHighscore())
+				{
+					myFileString.setHighpoint(i);
+					myFileString.setHighscore(score);
+				}
 		}
 	}
 
@@ -55,5 +64,8 @@ class SearchScore
 				}
 			}
 		}
+
+		if(k>score)
+			score=k;	//record how deep the recursion went
 	}
 }
