@@ -6,13 +6,9 @@ import java.nio.file.Paths;
 
 class Spiderbot
 {
-	Spiderbot()	//a constructor, empty for now
-	{
-	}
-
 	//a method to get a list of files to open which contain the string
 	//for now it will just return all files in the library
-	public FileString[] getFiles(String[] searchterm)
+	public static FileString[] getFiles(String[] searchterm)
 	{
 		int i;
 		File workingDir=new File("library/");

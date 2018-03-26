@@ -13,8 +13,7 @@ class test
 	public static void main(String[] args)
 	{
 		int i,j;
-		Spiderbot charlie=new Spiderbot();
-		FileString[] hello=charlie.getFiles("why art thou romeo".split("\\s+"));
+		FileString[] hello=Spiderbot.getFiles("why art thou romeo".split("\\s+"));
 
 		for(i=0; i<hello.length; i++)
 		{
