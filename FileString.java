@@ -79,6 +79,11 @@ class FileString implements Comparable<FileString>
 		return returnme;
 	}
 
+	public String getBestLine()		//return a string somewhere around the highpoint
+	{
+		return this.getContents(highpoint-5,highpoint+highscore+5);
+	}
+
 	public int getSizeofContents()
 	{
 		return this.contents.length;
