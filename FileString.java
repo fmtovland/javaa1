@@ -81,7 +81,14 @@ class FileString implements Comparable<FileString>
 
 	public String getBestLine()		//return a string somewhere around the highpoint
 	{
-		return this.getContents(highpoint-5,highpoint+highscore+5);
+		if(highpoint>5 && highpoint+highscore+5<contents.length)
+			return this.getContents(highpoint-5,highpoint+highscore+5);
+		else if(highpoint>5)
+			return this.getContents(highpoint-5,highpoint+highscore);
+		else if(highpoint+highscore+5<contents.length)
+			return this.getContents(highpoint,highpoint+highscore+5);
+		else
+			return this.getContents(highpoint,highpoint+highscore);
 	}
 
 	public int getSizeofContents()
