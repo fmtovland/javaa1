@@ -22,11 +22,9 @@ class test
 			hello[i]=new FileString("library/"+fileList[i].getName());
 		}
 
-		String[] searchme={"why","art","thou","romeo"};
-
 		for(i=0; i<hello.length; i++)
 		{
-			SearchScore.getSearchScore(hello[i],searchme);
+			SearchScore.getSearchScore(hello[i],"why art thou romeo");
 		}
 
 		Arrays.sort(hello);

@@ -35,6 +35,13 @@ class SearchScore
 		}
 	}
 
+	//a version of the other getsearchscore that converts a string argument to a string[]
+	static void getSearchScore(FileString myFileString, String SearchTerm)
+	{
+		String[] splitted=SearchTerm.split("\\s+");
+		getSearchScore(myFileString,splitted);
+	}
+
 	static void recursiveCheck(FileString myFileString, String[] SearchTerm, int k)	//circle through the next few search terms, each consecutive 
 	{
 		String[] wildCards=WildCards.getWildCards(SearchTerm[j+k]);
