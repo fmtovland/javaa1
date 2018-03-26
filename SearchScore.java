@@ -65,7 +65,7 @@ class SearchScore
 			}
 		}
 
-		if(k>score)
+		else if(k>score)
 			score=k;	//record how deep the recursion went
 	}
 }
