@@ -13,14 +13,8 @@ class test
 	public static void main(String[] args)
 	{
 		int i,j;
-		File workingDir=new File("library/");
-		File[] fileList=workingDir.listFiles();
-		FileString[] hello=new FileString[fileList.length];
-
-		for(i=0; i<fileList.length; i++)
-		{
-			hello[i]=new FileString("library/"+fileList[i].getName());
-		}
+		Spiderbot charlie=new Spiderbot();
+		FileString[] hello=charlie.getFiles("why art thou romeo".split("\\s+"));
 
 		for(i=0; i<hello.length; i++)
 		{
