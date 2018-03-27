@@ -52,12 +52,6 @@ class Frontend extends JFrame implements ActionListener
 		searchbutton.addActionListener(this);
 		add(searchbutton);
 
-		for(i=0; i<NUMNO; i++)
-		{
-			resultsbox[i]=new JLabel("");	//create 4 (or however many) empty results boxes
-			add(resultsbox[i]);
-		}
-
 		//next and last page buttons with indicator
 		leftButton=new JButton("<");
 		pagenum=new JLabel("0/0");
@@ -67,6 +61,12 @@ class Frontend extends JFrame implements ActionListener
 		add(leftButton);
 		add(pagenum);
 		add(rightButton);
+
+		for(i=0; i<NUMNO; i++)
+		{
+			resultsbox[i]=new JLabel("");	//create 4 (or however many) empty results boxes
+			add(resultsbox[i]);
+		}
 
 	}
 
