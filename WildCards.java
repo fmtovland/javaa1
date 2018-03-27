@@ -17,6 +17,8 @@ class WildCards
 	{
 		int len=wildcard.length();	//length of wildcard
 
+		if(len<4)			//ensure word is at least 4 letters long
+			return wildcard;
 
 		//check for suffixes from longest to shortest
 		if(checkSuffix(wildcard,3))		//check for 3 letter suffix
