@@ -32,6 +32,7 @@ class Frontend extends JFrame implements ActionListener
 	private JButton searchbutton;		//press to start looking for results
 	private JButton leftButton,rightButton;	//next or previous page
 	private JLabel[] resultsbox= new JLabel[NUMNO];
+	private JLabel pagenum;			//a textbox to show the page of results
 
 	//constructor
 	Frontend()
@@ -57,12 +58,14 @@ class Frontend extends JFrame implements ActionListener
 			add(resultsbox[i]);
 		}
 
-		//next and last page buttons
+		//next and last page buttons with indicator
 		leftButton=new JButton("<");
+		pagenum=new JLabel("0/0");
 		rightButton=new JButton(">");
 		leftButton.addActionListener(this);
 		rightButton.addActionListener(this);
 		add(leftButton);
+		add(pagenum);
 		add(rightButton);
 
 	}
@@ -87,6 +90,7 @@ class Frontend extends JFrame implements ActionListener
 
 			page=0;
 			lastpage=(potentials.length/NUMNO) - 1;
+			pagenum.setText((page+1)+"/"+(lastpage+1));
 		}
 
 		if(event1.getSource()==leftButton)
@@ -97,6 +101,7 @@ class Frontend extends JFrame implements ActionListener
 			if(page>0)
 			{
 				page--;
+				pagenum.setText((page+1)+"/"+(lastpage+1));
 
 				for(i=0; i<NUMNO; i++)
 					if(resultsbox[i]!=null)
@@ -114,6 +119,7 @@ class Frontend extends JFrame implements ActionListener
 			if(page<lastpage)
 			{
 				page++;
+				pagenum.setText((page+1)+"/"+(lastpage+1));
 
 				for(i=0; i<NUMNO; i++)
 					if(resultsbox[i]!=null)
