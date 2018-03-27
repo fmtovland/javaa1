@@ -24,10 +24,13 @@ class Frontend extends JFrame implements ActionListener
 	//attributes
 	private String searchterm;		//the string the user is looking for
 	private FileString[] potentials;	//possible files that might contain the filestring
+	private int page=-1;			//how many pages of results have been scrolled through
+	private int lastpage;			//the index of the last page
 
 	//buttons and such
 	private JTextField searchbox;
 	private JButton searchbutton;		//press to start looking for results
+	private JButton leftButton,rightButton;	//next or previous page
 	private JLabel[] resultsbox= new JLabel[NUMNO];
 
 	//constructor
@@ -54,6 +57,14 @@ class Frontend extends JFrame implements ActionListener
 			add(resultsbox[i]);
 		}
 
+		//next and last page buttons
+		leftButton=new JButton("<");
+		rightButton=new JButton(">");
+		leftButton.addActionListener(this);
+		rightButton.addActionListener(this);
+		add(leftButton);
+		add(rightButton);
+
 	}
 
 	public void actionPerformed(ActionEvent event1)
@@ -69,7 +80,47 @@ class Frontend extends JFrame implements ActionListener
 			Arrays.sort(potentials);
 
 			for(i=0; i<NUMNO; i++)
-				resultsbox[i].setText(potentials[i].getFilename()+": "+potentials[i].getBestLine());
+				if(resultsbox[i]!=null)
+					resultsbox[i].setText(potentials[i].getFilename()+": "+potentials[i].getBestLine());
+				else
+						resultsbox[i].setText("");
+
+			page=0;
+			lastpage=(potentials.length/NUMNO) - 1;
+		}
+
+		if(event1.getSource()==leftButton)
+		{
+			if(page==-1)
+				return;
+
+			if(page>0)
+			{
+				page--;
+
+				for(i=0; i<NUMNO; i++)
+					if(resultsbox[i]!=null)
+						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i].getBestLine());
+					else
+						resultsbox[i].setText("");
+			}
+		}
+
+		if(event1.getSource()==rightButton)
+		{
+			if(page==-1)
+				return;
+
+			if(page<lastpage)
+			{
+				page++;
+
+				for(i=0; i<NUMNO; i++)
+					if(resultsbox[i]!=null)
+						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i].getBestLine());
+					else
+						resultsbox[i].setText("");
+			}
 		}
 	}
 }
