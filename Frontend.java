@@ -34,7 +34,7 @@ class Frontend extends JFrame implements ActionListener
 	Frontend()
 	{
 		super("Searcher");	//label the window as searcher
-		setSize(360,240);
+		setSize(640,480);
 		setLayout(new FlowLayout());
 		setVisible(true);
 
