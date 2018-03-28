@@ -16,7 +16,7 @@ import java.util.Arrays;
 
 class Frontend extends JFrame implements ActionListener
 {
-	private final int NUMNO=4;	//number of search results to display on screen
+	private final int NUMNO=5;	//number of search results to display on screen
 
 	//tmp variables
 	private int i;
@@ -89,7 +89,7 @@ class Frontend extends JFrame implements ActionListener
 						resultsbox[i].setText("");
 
 			page=0;
-			lastpage=(potentials.length/NUMNO) - 1;
+			lastpage=potentials.length/NUMNO;
 			pagenum.setText((page+1)+"/"+(lastpage+1));
 		}
 
@@ -104,7 +104,7 @@ class Frontend extends JFrame implements ActionListener
 				pagenum.setText((page+1)+"/"+(lastpage+1));
 
 				for(i=0; i<NUMNO; i++)
-					if(resultsbox[i]!=null)
+					if(i+(page*NUMNO)<potentials.length)
 						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i].getBestLine());
 					else
 						resultsbox[i].setText("");
@@ -122,7 +122,7 @@ class Frontend extends JFrame implements ActionListener
 				pagenum.setText((page+1)+"/"+(lastpage+1));
 
 				for(i=0; i<NUMNO; i++)
-					if(resultsbox[i]!=null)
+					if(i+(page*NUMNO)<potentials.length)
 						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i].getBestLine());
 					else
 						resultsbox[i].setText("");
