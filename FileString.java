@@ -97,11 +97,7 @@ class FileString implements Comparable<FileString>
 		}
 
 		else if(highpoint+highscore+5<contents.length)
-		{
-			returnme=returnme+"<font color=\"red\">";
-			returnme=returnme+this.getContents(highpoint,highpoint+highscore)+"</font>";
-			returnme=returnme+this.getContents(highpoint+highscore+1,highpoint+highscore+5);
-		}
+			returnme=returnme+this.getContents(highpoint,highpoint+highscore+5);
 
 		else
 			returnme=returnme+"<font color=\"red\">"+this.getContents(highpoint,highpoint+highscore)+"</font>";
