@@ -21,13 +21,13 @@ class Spiderbot
 	public static FileString[] getFiles(String[] searchterm)
 	{
 		int i;
-		File workingDir=new File("library/");
+		File workingDir=new File(FileString.getWorkingDir());
 		File[] fileList=workingDir.listFiles();
 		FileString[] returnme=new FileString[fileList.length];
 
 		for(i=0; i<fileList.length; i++)
 		{
-			returnme[i]=new FileString("library/"+fileList[i].getName());
+			returnme[i]=new FileString(fileList[i].getName());
 		}
 
 		return returnme;

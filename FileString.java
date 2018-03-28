@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 
 class FileString implements Comparable<FileString>
 {
+	private static String workingDir="library/";	//the folder where all files are stored
 	private String filename;
 	private String[] contents;
 	private int priority=0;		//the higher this number grows, the higher the file will appear in search results
@@ -25,7 +26,7 @@ class FileString implements Comparable<FileString>
 		try
 		{
 			String tmp="";     //hold file contents before sorting
-			File file1=new File(filename);
+			File file1=new File(workingDir+filename);
 			Scanner scan1= new Scanner(file1);
 			while(scan1.hasNextLine())
 				tmp=tmp+" "+scan1.nextLine();
@@ -56,6 +57,11 @@ class FileString implements Comparable<FileString>
 	public String getFilename()
 	{
 		return this.filename;
+	}
+
+	public static String getWorkingDir()
+	{
+		return workingDir;
 	}
 
 	public String[] getContents()
