@@ -83,7 +83,7 @@ class Frontend extends JFrame implements ActionListener
 			Arrays.sort(potentials);
 
 			for(i=0; i<NUMNO; i++)
-				if(resultsbox[i]!=null)
+				if(i<potentials.length)
 					resultsbox[i].setText(potentials[i].getFilename()+": "+potentials[i].getBestLine());
 				else
 						resultsbox[i].setText("");
