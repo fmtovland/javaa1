@@ -105,7 +105,7 @@ class Frontend extends JFrame implements ActionListener
 
 				for(i=0; i<NUMNO; i++)
 					if(i+(page*NUMNO)<potentials.length)
-						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i].getBestLine());
+						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i+(page*NUMNO)].getBestLine());
 					else
 						resultsbox[i].setText("");
 			}
@@ -123,7 +123,7 @@ class Frontend extends JFrame implements ActionListener
 
 				for(i=0; i<NUMNO; i++)
 					if(i+(page*NUMNO)<potentials.length)
-						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i].getBestLine());
+						resultsbox[i].setText(potentials[i+(page*NUMNO)].getFilename()+": "+potentials[i+(page*NUMNO)].getBestLine());
 					else
 						resultsbox[i].setText("");
 			}
