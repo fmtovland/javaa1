@@ -13,6 +13,7 @@ class SearchScore
 
 	static void getSearchScore(FileString myFileString, String[] SearchTerm)
 	{
+		score=0;
 		//make all search terms lowercase
 		for(i=0; i<SearchTerm.length; i++)
 		{
