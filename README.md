@@ -1,0 +1,1 @@
+This is a project made in second year for java. You enter a search term into the search box. It then searches through all files in the folder named library for your strong and prints any results to the screen highlighting parts of your string in red.
