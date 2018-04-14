@@ -75,7 +75,7 @@ class Frontend extends JFrame implements ActionListener
 		if(event1.getSource()==searchbutton)
 		{
 			searchterm=searchbox.getText();
-			potentials=Spiderbot.getFiles(searchterm.split("\\s+"));
+			potentials=FileGetter.getFiles(searchterm.split("\\s+"));
 
 			for(i=0; i<potentials.length; i++)
 				SearchScore.getSearchScore(potentials[i],searchterm);
