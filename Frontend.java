@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 //other methods
 import java.util.Arrays;
+import java.util.ArrayList;
 
 class Frontend extends JFrame implements ActionListener
 {
@@ -80,6 +81,7 @@ class Frontend extends JFrame implements ActionListener
 			for(i=0; i<potentials.length; i++)
 				SearchScore.getSearchScore(potentials[i],searchterm);
 
+			potentials=Chop.cleanup(potentials);
 			Arrays.sort(potentials);
 
 			for(i=0; i<NUMNO; i++)
